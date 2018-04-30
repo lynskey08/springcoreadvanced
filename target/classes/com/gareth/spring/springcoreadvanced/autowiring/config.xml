@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd 
+ http://www.springframework.org/schema/context 
+ http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<!-- Here we use both property and constructor injection -->
+	<bean name="address" class="com.gareth.spring.springcoreadvanced.autowiring.Address" 
+	p:hno="123" p:street="Monalee Heights" p:city="San Diego"/>
+	  
+	<!-- using autowire byType on this bean, we're telling Spring 
+	container to inject the dependencies for this bean
+	'employee' automatically 
+	<bean name="employee" class="com.gareth.spring.springcoreadvanced.autowiring.Employee"
+	autowire="byType"/>--> 
+	
+	<!-- autowire byName 
+	<bean name="employee" class=
+	"com.gareth.spring.springcoreadvanced.autowiring.Employee"
+	autowire="byName"/> -->
+	
+	<!-- autowire by constructor -->
+	<bean name="employee" class=
+	"com.gareth.spring.springcoreadvanced.autowiring.Employee"
+	autowire="constructor"/>
+	
+
+</beans>
