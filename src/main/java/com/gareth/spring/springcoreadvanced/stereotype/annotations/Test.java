@@ -12,6 +12,11 @@ public class Test {
 		
 		Instructor instructor2 = (Instructor) ctx.getBean("inst");
 		System.out.println(instructor2);
+		
+		
+		System.out.println("\nThis displays the min value that an integer can hold which\nI accessed from a static variable on the Integer class through\nthe @Value annotation using Spring Expression Language "+Integer.MIN_VALUE);
+	
+		
 	}
 
 }
