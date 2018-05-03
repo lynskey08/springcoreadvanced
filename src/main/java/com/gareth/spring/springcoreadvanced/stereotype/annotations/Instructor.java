@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class Instructor {
 
 	//using class name to invoke a static method in the expression
-	@Value("#{T(java.lang.Math).abs(-99)}") //these values override all other values that have been assigned
+	@Value("#{T(java.lang.Math).abs(-123)}") //these values override all other values that have been assigned
 	private int id = 15;
 	@Value("Gareth Lynskey")
 	private String name = "Shane";
