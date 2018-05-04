@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd 
+ http://www.springframework.org/schema/context 
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util 
+ http://www.springframework.org/schema/util/spring-util.xsd"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<!-- Creating dependencies -->
+	<!-- Spring injects this implementation into the BO -->
+	<bean class="com.gareth.spring.springcoreadvanced.injecting.interfaces.OrderDAOImpl"
+	name="dao"/>
+	
+	<!-- Created new implementation of the interface to be injected -->
+	<bean class="com.gareth.spring.springcoreadvanced.injecting.interfaces.OrderDAOImpl2"
+	name="dao2"/>
+
+	<bean class="com.gareth.spring.springcoreadvanced.injecting.interfaces.OrderBOImpl"
+	name="bo">
+		<!-- referencing the OrderDAO object inside OrderBOImpl -->
+		<property name="dao" ref="dao2"/>
+	</bean>
+
+</beans>
